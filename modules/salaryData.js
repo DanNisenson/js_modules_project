@@ -34,5 +34,15 @@ const getDataByCompany = (company) => {
   return salaryData.filter((obj) => obj.company === company);
 };
 
-export { getRoles, getCompanies, getDataByRole, getDataByCompany };
+const formatNumber = (num) => {
+  let arr = num.toString().split('.');
+  let intRev = arr[1].reverse();
+  let result = [];
+  for (let i = 0; i < arr[0].length; i++) {
+      i % 3 == 0 ? result.push(',', intRev[i]) : result.push(intRev[i]);
+  }
+  console.log(result)
+}
+
+export { getRoles, getCompanies, getDataByRole, getDataByCompany, formatNumber };
 export default salaryData;
